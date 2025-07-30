@@ -1,0 +1,7 @@
+{
+  "name": "ESP32",
+  "proficiency": "Advanced",
+  "description": "Used in projects like the self-balancing robot. You’ve programmed it using Arduino IDE and implemented real-time control algorithms like PID.",
+  "icon": "esp32-icon.svg",
+  "category": "Embedded systems"
+}
