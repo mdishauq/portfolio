@@ -1,0 +1,7 @@
+{
+  "name": "C Programming",
+  "proficiency": "Expert",
+  "description": "Strong foundational knowledge in C, useful for embedded systems development and driver programming. Experienced in low-level programming for microcontrollers and embedded systems.",
+  "icon": "embedded-c-icon.svg",     // optional: name of an icon file stored in /skills or /images/icons
+  "category": "Programming Language" // optional: for grouping skills
+}
