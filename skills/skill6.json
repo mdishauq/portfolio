@@ -2,6 +2,6 @@
   "name": "Raspberry Pi",
   "proficiency": "Intermediate",
   "description": "Worked with Raspberry Pi for tasks involving Python and OpenCV. Used it to build projects like an automatic attendance system with face recognition.",
-  "icon": "raspberrypi-icon.svg",     
+  "icon": "raspberrypi-icon.png",     
   "category": "Embedded systems" 
 }
