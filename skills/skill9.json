@@ -1,0 +1,7 @@
+{
+  "name": "Lt spice",
+  "proficiency": "Intermediate",
+  "description": "Used for simulating and analyzing analog/digital circuits, including filters and power systems. Familiar with transient, AC, and DC analysis for validating circuit behavior before implementation.",
+  "icon": "ltspice-icon.svg",
+  "category": "Tools"
+}
