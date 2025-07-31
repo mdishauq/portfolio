@@ -2,6 +2,6 @@
   "name": "STM32Cube Programmer ",
   "proficiency": "Intermediate",
   "description": "Used for flashing firmware, erasing memory, and verifying programs on STM32 microcontrollers via ST-Link. Familiar with reading chip info, managing boot modes, and troubleshooting programming issues.",
-  "icon": "stm32cubeprogrammer-icon.svg",
+  "icon": "stm32cubeprogrammer-icon.png",
   "category": "Tools"
 }
