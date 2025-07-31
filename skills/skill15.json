@@ -2,6 +2,6 @@
   "name": "Linux (Basic Terminal, Raspbian OS)",
   "proficiency": "Intermediate",
   "description": "Familiar with Linux commands and file navigation. Used Raspberry Pi with Raspbian OS for project development and deployment.",
-  "icon": "linux-icon.svg",    
+  "icon": "linux-icon.png",    
   "category": "Tools" 
 }
