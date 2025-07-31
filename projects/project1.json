@@ -1,7 +1,7 @@
 {
   "title": "Multi-Mode RC Car",
   "description": "This project is a Bluetooth-controlled RC car built using an Arduino Uno and an L293D motor driver shield. It uses an HC-06 Bluetooth module for wireless communication with a smartphone. The car is powered by two 3.7V Li-ion batteries in series and features four DC motors for movement. This car can also run in autonomous mode using ultrasonic sensor and also works with voice command using blutooth.",
-  "video": "project1-thumbnail.mp4",           // Optional video preview
+  'video": "project1-thumbnail.mp4",           
   "github": "https://github.com/mdishauq/RC-car",
   "technologies": ["C", "Arduino IDE", "Bluetooth"]
 }
