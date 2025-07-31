@@ -1,1 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Mohamed Ishauq - Portfolio</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins&display=swap" rel="stylesheet" />
+  
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- Meta for SEO -->
+  <meta name="description" content="Mohamed Ishauq's professional portfolio showcasing projects, skills, and certifications." />
+  <meta name="author" content="Mohamed Ishauq" />
+  
+</head>
+<body>
+  <!-- Loading Screen (Preloader) -->
+  <div id="preloader" class="preloader">
+    <h1 class="preloader-title">Mohamed Ishauq</h1>
+    <p class="preloader-tagline">Embedded Systems & Software Developer</p>
+    <!-- SVG glitch/circuit effect can be injected here by CSS/JS -->
+  </div>
+  
+  <!-- Main content wrapper -->
+  <div id="main-content" style="display:none;">
+    <!-- Navbar -->
+    <nav class="navbar">
+      <ul>
+        <li><a href="#about" class="nav-link active">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#certifications" class="nav-link">Certifications</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+    
+    <!-- Sections -->
+    
+    <!-- About Section -->
+    <section id="about" class="section glass-section">
+      <div class="profile-container">
+        <img id="profile-photo" src="./images/profile.jpg" alt="Profile photo of Mohamed Ishauq" />
+        <div class="profile-text">
+          <h2>Hello, I'm Mohamed Ishauq</h2>
+          <p>Embedded Systems Engineer with a passion for crafting real-world solutions.</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="section glass-section">
+      <h2>Projects</h2>
+      <div id="projects-list" class="projects-grid">
+        <!-- Dynamic Projects cards inserted here by JS -->
+      </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="section glass-section">
+      <h2>Skills</h2>
+      <div id="skills-list" class="skills-grid">
+        <!-- Dynamic skill cards inserted here -->
+      </div>
+    </section>
+    
+    <!-- Certifications Section -->
+    <section id="certifications" class="section glass-section">
+      <h2>Certifications</h2>
+      <div id="certifications-list" class="certifications-grid">
+        <!-- Dynamic cert cards inserted here -->
+      </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="section glass-section">
+      <h2>Contact Me</h2>
+      <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">linkedin.com/in/yourprofile</a></p>
+      <p>GitHub: <a href="https://github.com/mdishauq" target="_blank" rel="noopener">github.com/mdishauq</a></p>
+    </section>
+    
+  </div>
+  
+  <!-- Upgrade Tracker Panel (optional debug display) -->
+  <aside id="upgrade-tracker" class="tracker-panel" aria-live="polite" role="region" aria-label="Upgrade progress tracker">
+    <h3>Upgrade Tracker</h3>
+    <ul>
+      <li>Loading Screen (Preloader): ✅</li>
+      <li>Section Transitions/Animations: ✅</li>
+      <li>Typography/Fonts: ✅</li>
+      <li>Navbar Section Highlighting: ✅</li>
+      <li>Uniform Card Heights: ✅</li>
+      <li>Auto-update from GitHub: Projects loading ✅</li> 
+      <li>Skills Loading: Pending</li>
+      <li>Certifications Loading: Pending</li>
+    </ul>
+  </aside>
+  
+  <!-- Your JavaScript -->
+  <script src="script.js" defer></script>
+  
+</body>
+</html>
 
