@@ -2,6 +2,6 @@
   "name": "GitHub",
   "proficiency": "Expert",
   "description": "Version control and project hosting. Done many project and uploaded in github. created my own portfolio through github",
-  "icon": "github-icon.svg",     // optional: name of an icon file stored in /skills or /images/icons
-  "category": "Tools" // optional: for grouping skills
+  "icon": "github-icon.svg",     
+  "category": "Tools" 
 }
