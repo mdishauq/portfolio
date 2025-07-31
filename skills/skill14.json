@@ -2,6 +2,6 @@
   "name": "Arduino IDE",
   "proficiency": "Expert",
   "description": "Primary environment for developing on Arduino and ESP32. Experienced in integrating libraries and handling serial communication.",
-  "icon": "arduinoide-icon.svg",     // optional: name of an icon file stored in /skills or /images/icons
-  "category": "Tools" // optional: for grouping skills
+  "icon": "arduinoide-icon.svg",     
+  "category": "Tools" 
 }
