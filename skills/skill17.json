@@ -2,6 +2,6 @@
   "name": "UART-I2C-SPI",
   "proficiency": "Expert",
   "description": "Used for serial communication with modules like Bluetooth (HC-06) and for debugging through serial monitors.Worked with I2C to interface with devices like the MPU6050 sensor in your self-balancing robot.Basic knowledge of SPI protocol used for high-speed communication between microcontrollers and peripherals.",
-  "icon": "communication-icon.svg",
+  "icon": "communication-icon.png",
   "category": "Communication Protocols"
 }
