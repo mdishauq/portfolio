@@ -1,0 +1,7 @@
+{
+  "name": "Linux (Basic Terminal, Raspbian OS)",
+  "proficiency": "Intermediate",
+  "description": "Familiar with Linux commands and file navigation. Used Raspberry Pi with Raspbian OS for project development and deployment.",
+  "icon": "linux-icon.svg",     // optional: name of an icon file stored in /skills or /images/icons
+  "category": "Tools" // optional: for grouping skills
+}
