@@ -2,6 +2,6 @@
   "name": "STM32CubeIDE",
   "proficiency": "Intermediate",
   "description": "Used for developing and debugging STM32 projects. Experienced in setting up projects, managing peripheral initialization, and debugging register-level code.",
-  "icon": "stm32cubeide-icon.svg",
+  "icon": "stm32cubeide-icon.png",
   "category": "Tools"
 }
