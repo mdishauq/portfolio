@@ -1,1 +1,8 @@
+{
+  "name": "STM32CubeMX",
+  "proficiency": "Intermediate",
+  "description": " Used to configure STM32 peripherals and generate initialization code. Familiar with setting up clock trees, GPIO, UART, ADC, I2C, SPI etc and exporting projects to IDEs like Keil and STM32CubeIDE for embedded development.",
+  "icon": "stm32cubemx-icon.svg",
+  "category": "Tools"
+}
 
