@@ -2,6 +2,6 @@
   "name": "Arduino",
   "proficiency": "Advanced",
   "description": "Built multi-mode RC cars and other automation projects. Proficient in wiring, sensor integration, and writing Arduino sketches.",
-  "icon": "arduino-icon.svg",
+  "icon": "arduino-icon.png",
   "category": "Embedded systems"
 }
