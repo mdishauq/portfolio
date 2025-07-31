@@ -2,6 +2,6 @@
   "name": "Bare-metal Programming",
   "proficiency": "Intermediate",
   "description": "Comfortable with register-level coding, especially on STM32 microcontrollers. Understanding datasheets and write direct hardware-access code without relying on abstraction layers.",
-  "icon": "baremetalprogramming-icon.svg",     
+  "icon": "baremetalprogramming-icon.png",     
   "category": "Programming Language" 
 }
