@@ -2,6 +2,6 @@
   "name": "python",
   "proficiency": "Basic",
   "description": "Clear foundational understanding of basic python.",
-  "icon": "python-icon.svg",     // optional: name of an icon file stored in /skills or /images/icons
-  "category": "Programming Language" // optional: for grouping skills
+  "icon": "python-icon.svg",     
+  "category": "Programming Language" 
 }
