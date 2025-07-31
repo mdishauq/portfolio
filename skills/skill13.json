@@ -1,0 +1,7 @@
+{
+  "name": "VS Code",
+  "proficiency": "Intermediate",
+  "description": "Used for editing Python, C, and other project-related files. Familiar with extensions, Git integration, and serial monitoring.",
+  "icon": "vscode-icon.svg",
+  "category": "Tools"
+}
