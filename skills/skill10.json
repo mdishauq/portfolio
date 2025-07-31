@@ -1,0 +1,7 @@
+{
+  "name": "Keil µVision (MDK)",
+  "proficiency": "Advanced",
+  "description": "Used alongside STM32CubeMX for ARM-based embedded development. Experienced in generating initialization code with CubeMX and importing it into Keil for register-level programming, code debugging, and simulation on STM32 microcontrollers.",
+  "icon": "keiluvision-icon.svg",
+  "category": "Tools"
+}
