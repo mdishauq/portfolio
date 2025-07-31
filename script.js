@@ -4,16 +4,27 @@ const GITHUB_REPO = 'portfolio'; // Change if repo name differs
 const BRANCH = 'main';
 
 const PROJECTS_API = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/projects`;
+const SKILLS_API = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/skills`;
+const CERTIFICATIONS_API = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/certifications`;
 
-// --- 1. Loading Screen / Preloader ---
+// --- 1. Loading Screen / Preloader and Content Loading ---
 window.addEventListener('DOMContentLoaded', () => {
   const preloader = document.getElementById('preloader');
   const mainContent = document.getElementById('main-content');
+
+  // Start loading all content ASAP
+  loadProjects();
+  loadSkills();
+  loadCertifications();
+
+  // Hide preloader and reveal content after minimum 7 seconds
   setTimeout(() => {
     document.body.classList.add('loaded');
     preloader.style.display = 'none';
     mainContent.style.display = 'block';
-    setTimeout(() => { mainContent.style.opacity = 1; }, 60);
+    setTimeout(() => {
+      mainContent.style.opacity = 1;
+    }, 60);
   }, 7000); // 7 seconds minimum
 });
 
@@ -41,69 +52,49 @@ window.addEventListener('DOMContentLoaded', revealSectionsOnScroll);
 
 // --- 4. AUTO-UPDATE: Fetch & Render Projects from GitHub ---
 async function loadProjects() {
-  const res = await fetch(PROJECTS_API);
-  const files = await res.json();
-  const jsonFiles = files.filter(file => file.name.endsWith('.json'));
+  try {
+    const res = await fetch(PROJECTS_API);
+    const files = await res.json();
+    const jsonFiles = files.filter(file => file.name.endsWith('.json'));
 
-  const projects = await Promise.all(jsonFiles.map(file =>
-    fetch(file.download_url).then(r => r.json())
-  ));
+    const projects = await Promise.all(jsonFiles.map(file =>
+      fetch(file.download_url).then(r => r.json())
+    ));
 
-  const projectsSection = document.getElementById('projects-list');
-  projectsSection.innerHTML = '';
-  projects.forEach(project => {
-    const card = document.createElement('div');
-    card.className = 'project-card';
+    const projectsSection = document.getElementById('projects-list');
+    projectsSection.innerHTML = '';
+    projects.forEach(project => {
+      const card = document.createElement('div');
+      card.className = 'project-card';
 
-    let mediaElem;
-    if (project.video) {
-      mediaElem = document.createElement('video');
-      mediaElem.src = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${BRANCH}/projects/${project.video}`;
-      mediaElem.controls = true;
-      mediaElem.width = 320; mediaElem.height = 180;
-    } else if (project.thumbnail) {
-      mediaElem = document.createElement('img');
-      mediaElem.src = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${BRANCH}/projects/${project.thumbnail}`;
-      mediaElem.alt = project.title + " thumbnail";
-      mediaElem.width = 320; mediaElem.height = 180;
-    }
+      let mediaElem;
+      if (project.video) {
+        mediaElem = document.createElement('video');
+        mediaElem.src = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${BRANCH}/projects/${project.video}`;
+        mediaElem.controls = true;
+        mediaElem.width = 320; mediaElem.height = 180;
+      } else if (project.thumbnail) {
+        mediaElem = document.createElement('img');
+        mediaElem.src = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${BRANCH}/projects/${project.thumbnail}`;
+        mediaElem.alt = project.title + " thumbnail";
+        mediaElem.width = 320; mediaElem.height = 180;
+      }
 
-    card.innerHTML = `
-      <h3>${project.title}</h3>
-      <p>${project.description}</p>
-      <a href="${project.github}" target="_blank">View on GitHub</a>
-      <div class="tech-list">${Array.isArray(project.technologies) ? project.technologies.join(', ') : ''}</div>
-    `;
-    if (mediaElem) card.prepend(mediaElem);
-    projectsSection.appendChild(card);
-  });
+      card.innerHTML = `
+        <h3>${project.title}</h3>
+        <p>${project.description}</p>
+        <a href="${project.github}" target="_blank" rel="noopener">View on GitHub</a>
+        <div class="tech-list">${Array.isArray(project.technologies) ? project.technologies.join(', ') : ''}</div>
+      `;
+      if (mediaElem) card.prepend(mediaElem);
+      projectsSection.appendChild(card);
+    });
+  } catch (err) {
+    console.error('Error loading projects:', err);
+  }
 }
-window.addEventListener('DOMContentLoaded', loadProjects);
 
-// --- 5. (Optional) Profile photo dynamic reload ---
-// If you ever need to load it dynamically:
-const profileImg = document.getElementById('profile-photo');
-if (profileImg) profileImg.src = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${BRANCH}/images/profile.jpg`;
-
-// --- Upgrade Tracker for reference ---
-// 1. Loading Screen (Preloader)
-// 2. Section Transitions/Animations
-// 3. Typography/Fonts
-// 4. Navbar Section Highlighting
-// 5. Uniform Card Heights
-// 6. Auto-update from GitHub (Projects: Fetch + Render in place)
-
-/* 
-// --- Next Steps for Skills & Certifications ---
-   - Use similar API endpoint for /skills and /certifications
-   - Fetch, parse and render cards as above
-   - Add card templates to #skills-list, #certifications-list
-*/
-// --- CONFIG for Skills and Certifications API endpoints ---
-const SKILLS_API = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/skills`;
-const CERTIFICATIONS_API = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/certifications`;
-
-// --- 7. Load and Render Skills ---
+// --- 5. Load and Render Skills ---
 async function loadSkills() {
   try {
     const res = await fetch(SKILLS_API);
@@ -143,7 +134,7 @@ async function loadSkills() {
   }
 }
 
-// --- 8. Load and Render Certifications ---
+// --- 6. Load and Render Certifications ---
 async function loadCertifications() {
   try {
     const res = await fetch(CERTIFICATIONS_API);
@@ -194,9 +185,17 @@ async function loadCertifications() {
   }
 }
 
-// --- Call the functions when DOM is ready ---
-window.addEventListener('DOMContentLoaded', () => {
-  loadSkills();
-  loadCertifications();
-});
+// --- 7. (Optional) Profile photo dynamic reload ---
+const profileImg = document.getElementById('profile-photo');
+if (profileImg) {
+  profileImg.src = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${BRANCH}/images/profile.jpg`;
+}
+
+// --- Upgrade Tracker for reference ---
+// 1. Loading Screen (Preloader)
+// 2. Section Transitions/Animations
+// 3. Typography/Fonts
+// 4. Navbar Section Highlighting
+// 5. Uniform Card Heights
+// 6. Auto-update from GitHub (Projects, Skills, Certifications fetching + rendering)
 
