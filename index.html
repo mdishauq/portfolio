@@ -10,38 +10,36 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins&display=swap" rel="stylesheet" />
   
-  <!-- Your CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
   
   <!-- Meta for SEO -->
   <meta name="description" content="Mohamed Ishauq's professional portfolio showcasing projects, skills, and certifications." />
   <meta name="author" content="Mohamed Ishauq" />
-  
 </head>
 <body>
-  <!-- Loading Screen (Preloader) -->
+  <!-- Loading Screen -->
   <div id="preloader" class="preloader">
     <h1 class="preloader-title">Mohamed Ishauq</h1>
     <p class="preloader-tagline">Embedded System & Firmware Developer</p>
-    <!-- SVG glitch/circuit effect can be injected here by CSS/JS -->
   </div>
   
-  <!-- Main content wrapper -->
   <div id="main-content" style="display:none;">
     <!-- Navbar -->
     <nav class="navbar">
-      <ul>
-        <li><a href="#about" class="nav-link active">About</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#certifications" class="nav-link">Certifications</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
+      <div class="nav-container">
+        <button class="menu-toggle" aria-label="Toggle Navigation">☰</button>
+        <ul class="nav-menu">
+          <li><a href="#about" class="nav-link active">About</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#certifications" class="nav-link">Certifications</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
     </nav>
-    
-    <!-- Sections -->
-    
-    <!-- About Section -->
+
+    <!-- About -->
     <section id="about" class="section glass-section">
       <div class="profile-container">
         <img id="profile-photo" src="./images/profile.jpg" alt="Profile photo of Mohamed Ishauq" />
@@ -51,59 +49,47 @@
         </div>
       </div>
     </section>
-    
-    <!-- Projects Section -->
+
+    <!-- Projects -->
     <section id="projects" class="section glass-section">
       <h2>Projects</h2>
-      <div id="projects-list" class="projects-grid">
-        <!-- Dynamic Projects cards inserted here by JS -->
-      </div>
+      <div id="projects-list" class="projects-grid"></div>
     </section>
-    
-    <!-- Skills Section -->
+
+    <!-- Skills -->
     <section id="skills" class="section glass-section">
       <h2>Skills</h2>
-      <div id="skills-list" class="skills-grid">
-        <!-- Dynamic skill cards inserted here -->
-      </div>
+      <div id="skills-list" class="skills-grid"></div>
     </section>
-    
-    <!-- Certifications Section -->
+
+    <!-- Certifications -->
     <section id="certifications" class="section glass-section">
       <h2>Certifications</h2>
-      <div id="certifications-list" class="certifications-grid">
-        <!-- Dynamic cert cards inserted here -->
-      </div>
+      <div id="certifications-list" class="certifications-grid"></div>
     </section>
-    
-    <!-- Contact Section -->
+
+    <!-- Contact -->
     <section id="contact" class="section glass-section">
       <h2>Contact Me</h2>
       <p>Email: <a href="mailto:mdishauq619@gmail.com">mdishauq619@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/mohamed-ishauq-839705335" target="_blank" rel="noopener">https://www.linked.com</a></p>
-      <p>GitHub: <a href="https://github.com/mdishauq" target="_blank" rel="noopener">github.com/mdishauq</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/mohamed-ishauq-839705335" target="_blank">LinkedIn</a></p>
+      <p>GitHub: <a href="https://github.com/mdishauq" target="_blank">GitHub</a></p>
     </section>
-    
   </div>
-  
-  <!-- Upgrade Tracker Panel (optional debug display) -->
-  <aside id="upgrade-tracker" class="tracker-panel" aria-live="polite" role="region" aria-label="Upgrade progress tracker">
+
+  <!-- Tracker -->
+  <aside id="upgrade-tracker" class="tracker-panel">
     <h3>Upgrade Tracker</h3>
     <ul>
-      <li>Loading Screen (Preloader): ✅</li>
-      <li>Section Transitions/Animations: ✅</li>
-      <li>Typography/Fonts: ✅</li>
-      <li>Navbar Section Highlighting: ✅</li>
-      <li>Uniform Card Heights: ✅</li>
-      <li>Auto-update from GitHub: Projects loading ✅</li> 
-      <li>Skills Loading: Pending</li>
-      <li>Certifications Loading: Pending</li>
+      <li>Loading Screen: ✅</li>
+      <li>Animations: ✅</li>
+      <li>Fonts: ✅</li>
+      <li>Mobile Menu: ✅</li>
+      <li>Responsive Layouts: ✅</li>
     </ul>
   </aside>
-  
-  <!-- Your JavaScript -->
+
+  <!-- JS -->
   <script src="script.js" defer></script>
-  
 </body>
 </html>
-
