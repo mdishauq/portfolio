@@ -2,6 +2,6 @@
   "title": "STM32 Bare Metal Programming",
   "description": "Bare metal programming which is coding without any os or libraries. proficient is analysing Data sheet and reference manual for the any stm boards",
   "thumbnail": "project2-thumbnail.jpg",           
-  "github": "https://github.com/mdishauq/Bare_metal_program",
-  "technologies": ["C", "STM32 CubeIDE", "STM32 Cube Programmer"]
+  "github": "https://github.com/mdishauq/stm32f103-baremetal-keil",
+  "technologies": ["C", "KEIL UVISION5", "ST LINK"]
 }
