@@ -341,4 +341,51 @@ body.loaded #main-content {
   #profile-photo { width: 95px; height: 95px; }
 }
 
+/* === MOBILE NAV MENU === */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1000px;
+}
 
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: #a5b5be;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 5%;
+    background: rgba(14,24,40,0.95);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  }
+  .nav-menu.active {
+    display: flex;
+    gap: 0.8rem;
+  }
+  .nav-menu li {
+    text-align: right;
+  }
+}
+
+/* === RESPONSIVE GRID FIXES === */
+.projects-grid, .skills-grid, .certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 1.5rem;
+}
