@@ -199,3 +199,19 @@ if (profileImg) {
 // 5. Uniform Card Heights
 // 6. Auto-update from GitHub (Projects, Skills, Certifications fetching + rendering)
 
+// --- 8. Mobile Menu Toggle ---
+document.addEventListener('DOMContentLoaded', () => {
+  const menuBtn = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  
+  if (menuBtn && navMenu) {
+    menuBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+    // Close menu when a link is clicked
+    navMenu.querySelectorAll('a').forEach(link =>
+      link.addEventListener('click', () => navMenu.classList.remove('active'))
+    );
+  }
+});
+
