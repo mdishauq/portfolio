@@ -269,6 +269,69 @@ h1, h2, h3, h4 {
   .skill-card,
   .cert-card {
     min-width: 94vw;
+
+/* === ANIMATIONS === */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Reusable Animation Classes */
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+.zoom-in {
+  animation: zoomIn 0.7s ease-out forwards;
+}
+
+/* Animated gradient border hover effect */
+.nav-link {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.nav-link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #ff0080, #7928ca);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+  z-index: -1;
+}
+.nav-link:hover::before {
+  transform: scaleX(1);
+}
+
+/* Button Hover */
+.project-card a,
+.cert-link {
+  transform: scale(1);
+}
+.project-card a:hover,
+.cert-link:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(121, 40, 202, 0.3);
+}
+
     max-width: 96vw;
   }
 }
