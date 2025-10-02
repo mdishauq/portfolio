@@ -8,21 +8,21 @@ const SKILLS_API = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/c
 const CERTIFICATIONS_API = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/certifications`;
 
 // ---------------------------------------------------------------------
-// --- 1. Loading Screen, Content Loading, & MULTI-PAGE NAVIGATION LOGIC ---
+// --- 1. Loading Screen, Content Loading, & MULTI-PAGE NAVIGATION LOGIC (MODIFIED) ---
 // ---------------------------------------------------------------------
 window.addEventListener('DOMContentLoaded', () => {
     const preloader = document.getElementById('preloader');
     const mainContent = document.getElementById('main-content');
-
-    // --- MULTI-PAGE ADAPTATION START ---
     
+    // Check if the user has already visited in this session
+    const hasVisited = sessionStorage.getItem('hasVisited'); 
+
     // 1. Load content only if its container exists on the current page
     if (document.getElementById('projects-list')) loadProjects();
     if (document.getElementById('skills-list')) loadSkills();
     if (document.getElementById('certifications-list')) loadCertifications();
     
     // 2. Set the 'active' class on the correct navbar link based on the URL
-    // This replaces the old scroll-based highlighting logic.
     const path = window.location.pathname.split('/').pop() || 'index.html'; // Gets filename
     const currentPageLink = document.querySelector(`.nav-link[href="${path}"]`);
 
@@ -32,25 +32,33 @@ window.addEventListener('DOMContentLoaded', () => {
         currentPageLink.classList.add('active');
     }
     
-    // --- MULTI-PAGE ADAPTATION END ---
-
-    // Hide preloader and reveal content after minimum 7 seconds
-    setTimeout(() => {
-        document.body.classList.add('loaded');
+    // 3. Handle Preloader Visibility (One-Time Load Logic)
+    if (hasVisited) {
+        // If flag exists, hide the preloader immediately and show main content
         preloader.style.display = 'none';
         mainContent.style.display = 'block';
+        // Use a short delay to ensure content transition is instant but smooth
         setTimeout(() => {
             mainContent.style.opacity = 1;
-        }, 60);
-    }, 7000); // 7 seconds minimum
+        }, 60); 
+    } else {
+        // If flag does NOT exist (first load), show preloader, then hide it, and set flag
+        setTimeout(() => {
+            document.body.classList.add('loaded');
+            preloader.style.display = 'none';
+            mainContent.style.display = 'block';
+            setTimeout(() => {
+                mainContent.style.opacity = 1;
+                // Set the flag after the preloader has been successfully hidden
+                sessionStorage.setItem('hasVisited', 'true'); 
+            }, 60);
+        }, 7000); // 7 seconds minimum delay for the first load
+    }
 });
 
 // ---------------------------------------------------------------------
-// --- NOTE: ORIGINAL SECTION 2 (SCROLL HIGHLIGHTING) HAS BEEN REMOVED ---
+// --- 2. Section Fade-In Animations (UNCHANGED) ---
 // ---------------------------------------------------------------------
-
-
-// --- 3. Section Fade-In Animations (Kept, but primary animation is now in HTML) ---
 function revealSectionsOnScroll() {
     const allSections = document.querySelectorAll('.section');
     allSections.forEach(section => {
@@ -62,7 +70,7 @@ window.addEventListener('DOMContentLoaded', revealSectionsOnScroll);
 
 
 // ---------------------------------------------------------------------
-// --- 4. AUTO-UPDATE: Fetch & Render Projects from GitHub (With Safety Check) ---
+// --- 3. AUTO-UPDATE: Fetch & Render Projects from GitHub (With Safety Check) ---
 // ---------------------------------------------------------------------
 async function loadProjects() {
     const projectsSection = document.getElementById('projects-list');
@@ -77,7 +85,6 @@ async function loadProjects() {
             fetch(file.download_url).then(r => r.json())
         ));
 
-        // projectsSection.innerHTML = ''; // This line was outside the try block in the old code, moved inside for safety
         projectsSection.innerHTML = '';
         projects.forEach(project => {
             const card = document.createElement('div');
@@ -111,7 +118,7 @@ async function loadProjects() {
 }
 
 // ---------------------------------------------------------------------
-// --- 5. Load and Render Skills (With Safety Check) ---
+// --- 4. Load and Render Skills (With Safety Check) ---
 // ---------------------------------------------------------------------
 async function loadSkills() {
     const skillsSection = document.getElementById('skills-list');
@@ -155,7 +162,7 @@ async function loadSkills() {
 }
 
 // ---------------------------------------------------------------------
-// --- 6. Load and Render Certifications (With Safety Check) ---
+// --- 5. Load and Render Certifications (With Safety Check) ---
 // ---------------------------------------------------------------------
 async function loadCertifications() {
     const certsSection = document.getElementById('certifications-list');
@@ -209,13 +216,13 @@ async function loadCertifications() {
     }
 }
 
-// --- 7. (Optional) Profile photo dynamic reload (UNCHANGED) ---
+// --- 6. (Optional) Profile photo dynamic reload (UNCHANGED) ---
 const profileImg = document.getElementById('profile-photo');
 if (profileImg) {
     profileImg.src = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${BRANCH}/images/profile.jpg`;
 }
 
-// --- 8. Mobile Menu Toggle (UNCHANGED) ---
+// --- 7. Mobile Menu Toggle (UNCHANGED) ---
 document.addEventListener('DOMContentLoaded', () => {
     const menuBtn = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
@@ -224,9 +231,9 @@ document.addEventListener('DOMContentLoaded', () => {
         menuBtn.addEventListener('click', () => {
             navMenu.classList.toggle('active');
         });
-        // Close menu when a link is clicked
+        // This closing on click works because navigating away reloads the page, 
+        // but we keep the listener to ensure consistency if the user clicks the current page link.
         navMenu.querySelectorAll('a').forEach(link =>
-            // IMPORTANT: Closing on click works because links now navigate to a new page (which reloads the JS)
             link.addEventListener('click', () => navMenu.classList.remove('active'))
         );
     }
