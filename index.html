@@ -5,121 +5,75 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Mohamed Ishauq - Portfolio</title>
+  <title>Mohamed Ishauq - About</title>
   
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins&display=swap" rel="stylesheet" />
   
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
   
-  <!-- Meta for SEO -->
   <meta name="description" content="Mohamed Ishauq's professional portfolio showcasing projects, skills, and certifications." />
   <meta name="author" content="Mohamed Ishauq" />
 </head>
 <body>
-  <!-- Loading Screen -->
   <div id="preloader" class="preloader">
     <h1 class="preloader-title">Mohamed Ishauq</h1>
     <p class="preloader-tagline">Embedded System & Firmware Developer</p>
   </div>
   
   <div id="main-content" style="display:none;">
-    <!-- Navbar -->
     <nav class="navbar">
       <div class="nav-container">
         <button class="menu-toggle" aria-label="Toggle Navigation">☰</button>
         <ul class="nav-menu">
-          <li><a href="#about" class="nav-link active">About</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#certifications" class="nav-link">Certifications</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="index.html" class="nav-link">About</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="skills.html" class="nav-link">Skills</a></li>
+          <li><a href="certifications.html" class="nav-link">Certifications</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
       </div>
     </nav>
 
-    <!-- About -->
-<!-- About -->
-<section id="about" class="section glass-section">
-  <div class="profile-container animated-about">
-    <img id="profile-photo" src="./images/profile.jpg" alt="Profile photo of Mohamed Ishauq" />
+    <section id="about" class="section glass-section">
+      <div class="profile-container animated-about">
+        <img id="profile-photo" src="./images/profile.jpg" alt="Profile photo of Mohamed Ishauq" />
 
-    <div class="profile-text">
-      <h2>👋 Hi, I'm Mohamed Ishauq</h2>
-      <p>
-        <img src="./images/icons/embedded.png" alt="Embedded systems icon" class="inline-icon" />
-        Embedded Systems Engineer passionate about solving real-world problems.
-      </p>
-      <p>
-        <img src="./images/icons/iot.png" alt="IoT icon" class="inline-icon" />
-        Exploring IoT, real-time systems, and firmware development.
-      </p>
-      <p>
-        <img src="./images/icons/firmware.png" alt="Firmware icon" class="inline-icon" />
-        Bridging the gap between hardware and software.
-      </p>
-    </div>
-  </div>
-</section>
-
-
-    <!-- Projects -->
-    <section id="projects" class="section glass-section">
-      <h2>Projects</h2>
-      <div id="projects-list" class="projects-grid"></div>
+        <div class="profile-text">
+          <h2>👋 Hi, I'm Mohamed Ishauq</h2>
+          <p>
+            <img src="./images/icons/embedded.png" alt="Embedded systems icon" class="inline-icon" />
+            Embedded Systems Engineer passionate about solving real-world problems.
+          </p>
+          <p>
+            <img src="./images/icons/iot.png" alt="IoT icon" class="inline-icon" />
+            Exploring IoT, real-time systems, and firmware development.
+          </p>
+          <p>
+            <img src="./images/icons/firmware.png" alt="Firmware icon" class="inline-icon" />
+            Bridging the gap between hardware and software.
+          </p>
+        </div>
+      </div>
     </section>
 
-    <!-- Skills -->
-    <section id="skills" class="section glass-section">
-      <h2>Skills</h2>
-      <div id="skills-list" class="skills-grid"></div>
-    </section>
-
-    <!-- Certifications -->
-    <section id="certifications" class="section glass-section">
-      <h2>Certifications</h2>
-      <div id="certifications-list" class="certifications-grid"></div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section glass-section">
-      <h2>Contact Me</h2>
-      <p>Email: <a href="mailto:mdishauq619@gmail.com">mdishauq619@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/mohamed-ishauq-839705335" target="_blank">LinkedIn</a></p>
-      <p>GitHub: <a href="https://github.com/mdishauq" target="_blank">GitHub</a></p>
-    </section>
   </div>
 
-  <!-- Tracker 
-  <aside id="upgrade-tracker" class="tracker-panel">
-    <h3>Upgrade Tracker</h3>
-    <ul>
-      <li>Loading Screen: ✅</li>
-      <li>Animations: ✅</li>
-      <li>Fonts: ✅</li>
-      <li>Mobile Menu: ✅</li>
-      <li>Responsive Layouts: ✅</li>
-    </ul>
-  </aside> -->
-
-  <!-- JS -->
   <script src="script.js" defer></script>
   <script>
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        entry.target.classList.add('fade-in-up');
-        observer.unobserve(entry.target); // Trigger only once
-      }
-    });
-  }, { threshold: 0.1 });
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          entry.target.classList.add('fade-in-up');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
 
-  document.querySelectorAll('.section').forEach(section => {
-    observer.observe(section);
-  });
-</script>
+    document.querySelectorAll('.section').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 
 </body>
 </html>
