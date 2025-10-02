@@ -99,13 +99,22 @@ h1, h2, h3, h4 {
   flex-wrap: wrap;
   justify-content: center;
 }
+
+/* Define a custom animation for the pulsing glow */
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 15px rgba(255, 0, 128, 0.2), 0 0 0 0 rgba(255, 0, 128, 0.5); }
+    50% { box-shadow: 0 0 25px rgba(255, 0, 128, 0.8), 0 0 5px 5px rgba(255, 0, 128, 0.1); }
+    100% { box-shadow: 0 0 15px rgba(255, 0, 128, 0.2), 0 0 0 0 rgba(255, 0, 128, 0.5); }
+}
+
 #profile-photo {
-  width: 150px;
-  height: 150px;
+  width: 150px; /* Ensuring the correct size */
+  height: 150px; /* Ensuring the correct size */
   border-radius: 50%;
   border: 4px solid #ff0080;
   object-fit: cover;
-  box-shadow: 0 0 15px rgba(255,0,128,0.2);
+  /* box-shadow: 0 0 15px rgba(255,0,128,0.2); */ /* Replaced by animation */
+  animation: pulseGlow 4s infinite ease-in-out; /* Added pulsing animation */
 }
 .profile-text {
   max-width: 420px;
@@ -113,11 +122,10 @@ h1, h2, h3, h4 {
 
 /* === INLINE ICONS (FIXED SIZE) === */
 .inline-icon {
-  /* MODIFIED: Increased size for visibility */
   width: 32px;
   height: 32px;
   vertical-align: middle;
-  margin-right: 12px; /* Increased margin for better spacing */
+  margin-right: 12px;
   filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.1));
 }
 
@@ -286,61 +294,3 @@ h1, h2, h3, h4 {
 /* === ANIMATIONS === */
 @keyframes fadeInUp {
   from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes zoomIn {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* Reusable Animation Classes */
-.fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-.zoom-in {
-  animation: zoomIn 0.7s ease-out forwards;
-}
-
-/* Animated gradient border hover effect */
-.nav-link {
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-}
-.nav-link::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, #ff0080, #7928ca);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease-in-out;
-  z-index: -1;
-}
-.nav-link:hover::before {
-  transform: scaleX(1);
-}
-
-/* Button Hover */
-.project-card a,
-.cert-link {
-  transform: scale(1);
-}
-.project-card a:hover,
-.cert-link:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 12px rgba(121, 40, 202, 0.3);
-}
