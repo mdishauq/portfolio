@@ -1,79 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Mohamed Ishauq - About</title>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins&display=swap" rel="stylesheet" />
-  
-  <link rel="stylesheet" href="style.css" />
-  
-  <meta name="description" content="Mohamed Ishauq's professional portfolio showcasing projects, skills, and certifications." />
-  <meta name="author" content="Mohamed Ishauq" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Mohamed Ishauq - About</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <meta name="description" content="Mohamed Ishauq's professional portfolio showcasing projects, skills, and certifications." />
+  <meta name="author" content="Mohamed Ishauq" />
 </head>
 <body class="about-page-bg">
-  <div id="preloader" class="preloader">
-    <h1 class="preloader-title">Mohamed Ishauq</h1>
-    <p class="preloader-tagline">Embedded System & Firmware Developer</p>
-  </div>
-  
-  <div id="main-content" style="display:none;">
-    <nav class="navbar">
-      <div class="nav-container">
-        <button class="menu-toggle" aria-label="Toggle Navigation">☰</button>
-        <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">About</a></li>
-          <li><a href="projects.html" class="nav-link">Projects</a></li>
-          <li><a href="skills.html" class="nav-link">Skills</a></li>
-          <li><a href="certifications.html" class="nav-link">Certifications</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
+  <div id="preloader" class="preloader">
+    <h1 class="preloader-title">Mohamed Ishauq</h1>
+    <p class="preloader-tagline">Embedded System & Firmware Developer</p>
+  </div>
 
-    <section id="about" class="section glass-section">
-      <div class="profile-container animated-about">
-        <img id="profile-photo" src="./images/profile.jpg" alt="Profile photo of Mohamed Ishauq" />
+  <div id="main-content" style="display:none;">
+    <nav class="navbar">
+      <div class="nav-container">
+        <button class="menu-toggle" aria-label="Toggle Navigation">☰</button>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">About</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="skills.html" class="nav-link">Skills</a></li>
+          <li><a href="certifications.html" class="nav-link">Certifications</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
 
-        <div class="profile-text">
-          <h2>👋 Hi, I'm Mohamed Ishauq</h2>
-          <p>
-                        <img src="./icons/embedded.png" alt="Embedded systems icon" class="inline-icon" />
-            Embedded Systems Engineer passionate about solving real-world problems.
-          </p>
-          <p>
-                        <img src="./icons/iot.png" alt="IoT icon" class="inline-icon" />
-            Exploring IoT, real-time systems, and firmware development.
-          </p>
-          <p>
-                        <img src="./icons/firmware.png" alt="Firmware icon" class="inline-icon" />
-            Bridging the gap between hardware and software.
-          </p>
-        </div>
-        </div>
-    </section>
+    <section id="about" class="section glass-section">
+      <div class="profile-container animated-about">
+        <img id="profile-photo" src="./images/profile.jpg" alt="Profile photo of Mohamed Ishauq" />
+        <div class="profile-text">
+          <h2>👋 Hi, I'm Mohamed Ishauq</h2>
+          <p>
+            <img src="./icons/embedded.png" alt="Embedded systems icon" class="inline-icon" />
+            Embedded Systems Engineer passionate about solving real-world problems.
+          </p>
+          <p>
+            <img src="./icons/iot.png" alt="IoT icon" class="inline-icon" />
+            Exploring IoT, real-time systems, and firmware development.
+          </p>
+          <p>
+            <img src="./icons/firmware.png" alt="Firmware icon" class="inline-icon" />
+            Bridging the gap between hardware and software.
+          </p>
+        </div>
+      </div>
+    </section>
 
-  </div>
+  </div>
 
-  <script src="script.js" defer></script>
-  <script>
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          entry.target.classList.add('fade-in-up');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
+  <script src="script.js" defer></script>
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          entry.target.classList.add('fade-in-up');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
 
-    document.querySelectorAll('.section').forEach(section => {
-      observer.observe(section);
-    });
-  </script>
-
+    document.querySelectorAll('.section').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
