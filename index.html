@@ -1,344 +1,79 @@
-/* === RESET AND BASE === */
-body {
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  background: #ffffff;
-  color: #5f2a84; /* Purple tone */
-  min-height: 100vh;
-  transition: background 0.6s;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Mohamed Ishauq - About</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="style.css" />
+  
+  <meta name="description" content="Mohamed Ishauq's professional portfolio showcasing projects, skills, and certifications." />
+  <meta name="author" content="Mohamed Ishauq" />
+</head>
+<body>
+  <div id="preloader" class="preloader">
+    <h1 class="preloader-title">Mohamed Ishauq</h1>
+    <p class="preloader-tagline">Embedded System & Firmware Developer</p>
+  </div>
+  
+  <div id="main-content" style="display:none;">
+    <nav class="navbar">
+      <div class="nav-container">
+        <button class="menu-toggle" aria-label="Toggle Navigation">☰</button>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">About</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="skills.html" class="nav-link">Skills</a></li>
+          <li><a href="certifications.html" class="nav-link">Certifications</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
 
-a {
-  color: #8a2be2;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-a:hover,
-a:focus {
-  color: #b364ff;
-}
+    <section id="about" class="section glass-section">
+      <div class="profile-container animated-about">
+        <img id="profile-photo" src="./images/profile.jpg" alt="Profile photo of Mohamed Ishauq" />
 
-h1, h2, h3, h4 {
-  color: #5f2a84;
-  font-family: "Poppins", sans-serif;
-  letter-spacing: 1px;
-}
+        <div class="profile-text">
+          <h2>👋 Hi, I'm Mohamed Ishauq</h2>
+          <p>
+                        <img src="./icons/embedded.png" alt="Embedded systems icon" class="inline-icon" />
+            Embedded Systems Engineer passionate about solving real-world problems.
+          </p>
+          <p>
+                        <img src="./icons/iot.png" alt="IoT icon" class="inline-icon" />
+            Exploring IoT, real-time systems, and firmware development.
+          </p>
+          <p>
+                        <img src="./icons/firmware.png" alt="Firmware icon" class="inline-icon" />
+            Bridging the gap between hardware and software.
+          </p>
+        </div>
+      </div>
+    </section>
 
-/* === PRELOADER === */
-.preloader {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: #fff;
-  z-index: 999999;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+  </div>
 
-.preloader-title {
-  font-size: 2.6rem;
-  color: #8a2be2;
-}
-.preloader-tagline {
-  font-size: 1.2rem;
-  color: #b364ff;
-  margin-top: 0.5rem;
-}
+  <script src="script.js" defer></script>
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          entry.target.classList.add('fade-in-up');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
 
-/* === NAVBAR === */
-.navbar {
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  padding: 0.6rem 0;
-  display: flex;
-  justify-content: center;
-}
+    document.querySelectorAll('.section').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 
-.navbar ul {
-  display: flex;
-  gap: 1.3rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-link {
-  color: #7b1fa2;
-  font-size: 1rem;
-  padding: 0.4rem 1rem;
-  border-radius: 14px;
-  transition: background 0.3s;
-}
-
-.nav-link.active,
-.nav-link:hover {
-  background: linear-gradient(90deg, #ff0080, #7928ca);
-  color: #fff;
-}
-
-/* === SECTION STYLING === */
-.section.glass-section {
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 2rem 1.5rem;
-  max-width: 960px;
-  margin: 2rem auto;
-  box-shadow: 0 6px 32px rgba(0,0,0,0.08);
-  border: 2px solid #f0f0f0;
-}
-
-/* === PROFILE SECTION === */
-.profile-container {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-#profile-photo {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 4px solid #ff0080;
-  object-fit: cover;
-  box-shadow: 0 0 15px rgba(255,0,128,0.2);
-}
-.profile-text {
-  max-width: 420px;
-}
-
-/* === CARD BASE === */
-.project-card,
-.skill-card,
-.cert-card {
-  background: #ffffff;
-  border: 2px solid transparent;
-  border-radius: 18px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
-  transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
-  padding: 1.2rem;
-  text-align: center;
-}
-.project-card:hover,
-.skill-card:hover,
-.cert-card:hover {
-  transform: translateY(-5px);
-  border-image: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet) 1;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-}
-
-/* === PROJECT CARD === */
-.project-card img,
-.project-card video {
-  width: 100%;
-  max-width: 320px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-}
-.project-card h3 {
-  color: #5f2a84;
-  margin: 0.5rem 0;
-}
-.project-card .tech-list {
-  color: #8a2be2;
-  font-size: 0.95rem;
-}
-.project-card a {
-  display: inline-block;
-  margin-top: 0.7rem;
-  padding: 0.4rem 1.1rem;
-  background: linear-gradient(90deg, #ff0080, #7928ca);
-  color: white;
-  border-radius: 12px;
-  font-weight: bold;
-  transition: background 0.3s;
-}
-.project-card a:hover {
-  background: linear-gradient(90deg, #7928ca, #ff0080);
-}
-
-/* === SKILL CARD === */
-.skill-card {
-  min-width: 180px;
-}
-.skill-card img {
-  width: 56px;
-  height: 56px;
-}
-.skill-card h4 {
-  color: #7b1fa2;
-  margin: 0.5rem 0;
-}
-.skill-card .skill-level {
-  color: #b364ff;
-}
-.skill-card p {
-  color: #5f2a84;
-  font-size: 0.92rem;
-}
-
-/* === CERTIFICATION CARD === */
-.cert-card img {
-  width: 90%;
-  border-radius: 10px;
-  margin-bottom: 0.8rem;
-}
-.cert-card h4 {
-  color: #7b1fa2;
-}
-.cert-card .cert-issuer,
-.cert-card .cert-date {
-  color: #a16dc9;
-  font-size: 0.9rem;
-}
-.cert-card p {
-  font-size: 0.92rem;
-  color: #5f2a84;
-}
-.cert-link {
-  display: inline-block;
-  margin-top: 0.6rem;
-  color: #fff;
-  background: linear-gradient(to right, #ff0080, #7928ca);
-  padding: 0.35rem 0.9rem;
-  border-radius: 10px;
-}
-
-/* === GRID LAYOUTS === */
-.projects-grid,
-.skills-grid,
-.certifications-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-}
-
-/* === SECTION ANIMATION === */
-.section {
-  opacity: 0;
-  transform: translateY(64px);
-  transition: all 0.7s ease-in-out;
-}
-.section.visible {
-  opacity: 1;
-  transform: none;
-}
-
-/* === MOBILE MENU === */
-.menu-toggle {
-  display: none;
-  font-size: 1.8rem;
-  background: none;
-  border: none;
-  color: #7b1fa2;
-  cursor: pointer;
-}
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-  .nav-menu {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 5%;
-    background: #fff;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  }
-  .nav-menu.active {
-    display: flex;
-    gap: 0.8rem;
-  }
-}
-
-/* === RESPONSIVE FIXES === */
-@media (max-width: 600px) {
-  .profile-container {
-    flex-direction: column;
-  }
-  .project-card,
-  .skill-card,
-  .cert-card {
-    min-width: 94vw;
-
-/* === ANIMATIONS === */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes zoomIn {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* Reusable Animation Classes */
-.fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-.zoom-in {
-  animation: zoomIn 0.7s ease-out forwards;
-}
-
-/* Animated gradient border hover effect */
-.nav-link {
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-}
-.nav-link::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, #ff0080, #7928ca);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease-in-out;
-  z-index: -1;
-}
-.nav-link:hover::before {
-  transform: scaleX(1);
-}
-
-/* Button Hover */
-.project-card a,
-.cert-link {
-  transform: scale(1);
-}
-.project-card a:hover,
-.cert-link:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 12px rgba(121, 40, 202, 0.3);
-}
-
-    max-width: 96vw;
-  }
-}
-.inline-icon {
-  width: 22px;
-  height: 22px;
-  vertical-align: middle;
-  margin-right: 8px;
-  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.1));
-}
+</body>
+</html>
