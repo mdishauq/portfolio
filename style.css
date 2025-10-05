@@ -342,3 +342,12 @@ h1, h2, h3, h4 {
   margin-right: 8px;
   filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.1));
 }
+
+/* Add this to style.css */
+.about-page-bg {
+    background-image: url('./backgrounds/background.jpg');
+    background-size: cover; 
+    background-position: center center;
+    background-attachment: fixed;
+    background-color: #333333; /* Fallback color */
+}
