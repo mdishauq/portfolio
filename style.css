@@ -8,7 +8,7 @@ body {
 }
 
 body.about-page-bg {
-    background-image: url('./backgrounds/background.jpg');
+    background-image: url('./backgrounds/background.png');
     background-size: cover; 
     background-position: center center;
     background-attachment: fixed;
