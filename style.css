@@ -1,18 +1,12 @@
+/* === RESET AND BASE === */
 body {
     margin: 0;
     font-family: "Poppins", sans-serif;
+    /* We are keeping this global background, but it will be overridden by the specific rule below */
     background: #ffffff; 
-    color: #5f2a84;
+    color: #5f2a84; /* Purple tone */
     min-height: 100vh;
     transition: background 0.6s;
-}
-
-body.about-page-bg {
-    background-image: url('./backgrounds/background.png');
-    background-size: cover; 
-    background-position: center center;
-    background-attachment: fixed;
-    background-color: #333333; 
 }
 
 a {
@@ -20,7 +14,8 @@ a {
     text-decoration: none;
     transition: color 0.2s;
 }
-a:hover, a:focus {
+a:hover,
+a:focus {
     color: #b364ff;
 }
 
@@ -28,13 +23,6 @@ h1, h2, h3, h4 {
     color: #5f2a84;
     font-family: "Poppins", sans-serif;
     letter-spacing: 1px;
-}
-
-h2 {
-    font-size: 2.3rem;
-    font-family: 'Orbitron', 'Poppins', sans-serif;
-    text-shadow: 0 2px 16px rgba(121,40,202,0.10);
-    letter-spacing: 2px;
 }
 
 /* === PRELOADER === */
@@ -70,6 +58,7 @@ h2 {
     display: flex;
     justify-content: center;
 }
+
 .navbar ul {
     display: flex;
     gap: 1.3rem;
@@ -77,45 +66,30 @@ h2 {
     margin: 0;
     padding: 0;
 }
+
 .nav-link {
     color: #7b1fa2;
     font-size: 1rem;
     padding: 0.4rem 1rem;
     border-radius: 14px;
     transition: background 0.3s;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
 }
-.nav-link.active, .nav-link:hover {
+
+.nav-link.active,
+.nav-link:hover {
     background: linear-gradient(90deg, #ff0080, #7928ca);
     color: #fff;
-}
-.nav-link::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, #ff0080, #7928ca);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease-in-out;
-    z-index: -1;
-}
-.nav-link:hover::before {
-    transform: scaleX(1);
 }
 
 /* === SECTION STYLING === */
 .section.glass-section {
-    background: rgba(255, 255, 255, 0.12);
+    background: #ffffff;
     border-radius: 20px;
     padding: 2rem 1.5rem;
     max-width: 960px;
     margin: 2rem auto;
-    box-shadow: 0 6px 32px rgba(0,0,0,0.30);
-    border: 1.5px solid rgba(255,255,255,0.35);
-    backdrop-filter: blur(12px) saturate(180%);
-    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    box-shadow: 0 6px 32px rgba(0,0,0,0.08);
+    border: 2px solid #f0f0f0;
 }
 
 /* === PROFILE SECTION === */
@@ -132,18 +106,10 @@ h2 {
     border-radius: 50%;
     border: 4px solid #ff0080;
     object-fit: cover;
-    box-shadow: 0 0 22px rgba(121, 40, 202, 0.5), 0 0 16px rgba(255,255,255,0.09);
+    box-shadow: 0 0 15px rgba(255,0,128,0.2);
 }
 .profile-text {
     max-width: 420px;
-}
-
-.inline-icon {
-    width: 22px;
-    height: 22px;
-    vertical-align: middle;
-    margin-right: 8px;
-    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.1));
 }
 
 /* === CARD BASE === */
@@ -166,7 +132,89 @@ h2 {
     box-shadow: 0 6px 20px rgba(0,0,0,0.1);
 }
 
-.projects-grid, .skills-grid, .certifications-grid {
+/* === PROJECT CARD === */
+.project-card img,
+.project-card video {
+    width: 100%;
+    max-width: 320px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+.project-card h3 {
+    color: #5f2a84;
+    margin: 0.5rem 0;
+}
+.project-card .tech-list {
+    color: #8a2be2;
+    font-size: 0.95rem;
+}
+.project-card a {
+    display: inline-block;
+    margin-top: 0.7rem;
+    padding: 0.4rem 1.1rem;
+    background: linear-gradient(90deg, #ff0080, #7928ca);
+    color: white;
+    border-radius: 12px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+.project-card a:hover {
+    background: linear-gradient(90deg, #7928ca, #ff0080);
+}
+
+/* === SKILL CARD === */
+.skill-card {
+    min-width: 180px;
+}
+.skill-card img {
+    width: 56px;
+    height: 56px;
+}
+.skill-card h4 {
+    color: #7b1fa2;
+    margin: 0.5rem 0;
+}
+.skill-card .skill-level {
+    color: #b364ff;
+}
+.skill-card p {
+    color: #5f2a84;
+    font-size: 0.92rem;
+}
+
+/* === CERTIFICATION CARD === */
+.cert-card img {
+    width: 90%;
+    border-radius: 10px;
+    margin-bottom: 0.8rem;
+}
+.cert-card h4 {
+    color: #7b1fa2;
+}
+.cert-card .cert-issuer,
+.cert-card .cert-date {
+    color: #a16dc9;
+    font-size: 0.9rem;
+}
+.cert-card p {
+    font-size: 0.92rem;
+    color: #5f2a84;
+}
+.cert-link {
+    display: inline-block;
+    margin-top: 0.6rem;
+    color: #fff;
+    background: linear-gradient(to right, #ff0080, #7928ca);
+    padding: 0.35rem 0.9rem;
+    border-radius: 10px;
+}
+
+/* === GRID LAYOUTS === */
+.projects-grid,
+.skills-grid,
+.certifications-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1.5rem;
@@ -193,7 +241,9 @@ h2 {
     cursor: pointer;
 }
 @media (max-width: 768px) {
-    .menu-toggle { display: block; }
+    .menu-toggle {
+        display: block;
+    }
     .nav-menu {
         display: none;
         flex-direction: column;
@@ -247,12 +297,64 @@ h2 {
     }
 }
 
-.fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
-.zoom-in { animation: zoomIn 0.7s ease-out forwards; }
+/* Reusable Animation Classes */
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+.zoom-in {
+    animation: zoomIn 0.7s ease-out forwards;
+}
+
+/* Animated gradient border hover effect */
+.nav-link {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+.nav-link::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #ff0080, #7928ca);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+    z-index: -1;
+}
+.nav-link:hover::before {
+    transform: scaleX(1);
+}
 
 /* Button Hover */
-.project-card a, .cert-link { transform: scale(1); }
-.project-card a:hover, .cert-link:hover {
+.project-card a,
+.cert-link {
+    transform: scale(1);
+}
+.project-card a:hover,
+.cert-link:hover {
     transform: scale(1.05);
     box-shadow: 0 0 12px rgba(121, 40, 202, 0.3);
+}
+
+.inline-icon {
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
+    margin-right: 8px;
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.1));
+}
+
+/* ======================================= */
+/* === ABOUT PAGE UNIQUE BACKGROUND FIX === */
+/* ======================================= */
+/* Use the chained selector (body.class) to ensure it overrides the general 'body' styles. */
+body.about-page-bg {
+    background-image: url('./backgrounds/background.jpg');
+    background-size: cover; 
+    background-position: center center;
+    background-attachment: fixed;
+    background-color: #333333; 
+    /* The global 'transition: background 0.6s;' might interfere, 
+       but we leave it off this block to see the background immediately.
+       If you still have issues, you can add 'transition: none !important;' here. */
 }
