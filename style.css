@@ -343,3 +343,56 @@ h1, h2, h3, h4 {
   filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.1));
 }
 
+/* === HERO SECTION === */
+.hero {
+  height: 100vh;
+  background: url('backgrounds/background.png') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.hero-content h1 {
+  font-size: 3.2rem;
+  font-family: "Orbitron", sans-serif;
+  text-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+  margin: 0;
+  animation: fadeInDown 1.5s ease-in-out;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-top: 0.8rem;
+  opacity: 0.9;
+  animation: fadeInUp 1.5s ease-in-out;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  font-size: 1.8rem;
+  opacity: 0.7;
+  animation: bounce 2s infinite;
+  color: white;
+}
+
+/* Smooth animations */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
