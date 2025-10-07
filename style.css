@@ -1,0 +1,167 @@
+/* === RESET AND BASE === */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #ffffff;
+  color: #5f2a84; /* Purple tone */
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+
+a {
+  color: #5f2a84;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* === HEADER === */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  background: linear-gradient(90deg, #5f2a84, #9c4dcc);
+  color: #fff;
+}
+
+header h1 {
+  font-size: 1.8rem;
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  color: white;
+  font-weight: 500;
+  transition: opacity 0.3s;
+}
+
+nav a:hover {
+  opacity: 0.8;
+}
+
+/* === HERO SECTION === */
+.hero {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: #f3e8ff;
+}
+
+.hero img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #6a1b9a;
+}
+
+/* === SECTION BASE === */
+section {
+  padding: 4rem 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #5f2a84;
+}
+
+/* === PROJECTS GRID === */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  background: #f8f3ff;
+  border-radius: 15px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 16px rgba(95, 42, 132, 0.3);
+}
+
+/* === CERTIFICATIONS === */
+.certifications img {
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* === CONTACT === */
+.contact {
+  text-align: center;
+}
+
+.contact a {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 30px;
+  background: #5f2a84;
+  color: white;
+  transition: background 0.3s;
+}
+
+.contact a:hover {
+  background: #7b3bb3;
+}
+
+/* === FOOTER === */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #5f2a84;
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* === BUTTON HOVER EFFECT === */
+.project-card a,
+.cert-link {
+  transform: scale(1);
+}
+
+.project-card a:hover,
+.cert-link:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(121, 40, 202, 0.3);
+}
+
+/* === ICONS === */
+.inline-icon {
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+  margin-right: 8px;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.1));
+}
