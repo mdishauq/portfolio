@@ -1,1 +1,13 @@
-
+{
+  "certificate": {
+    "title": "Certificate of Appreciation",
+    "recipient_name": "Mohamed Ishauq",
+    "achievement": "3rd place",
+    "event": "Embedded Systems Using Raspberry Pi Hackathon",
+    "program": "Naan Mudhalvan",
+    "organized_by": "TANSAM",
+    "date": "29-04-2025",
+    "project": "Automated attendence system using raspberry pi",
+    "description": "Awarded for achieving 1st place in the Embedded Systems Using Raspberry Pi Hackathon conducted under the Naan Mudhalvan program organized by TANSAM. Recognized for excellent participation and outstanding work."
+  }
+}
