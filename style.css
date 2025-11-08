@@ -51,29 +51,61 @@ ul {
 /* === 3D CANVAS CONTAINER === */
 #canvas-container {
   position: fixed;
-  top: 80px;
-  right: 50px;
-  width: 300px;
-  height: 300px;
+  top: 100px;
+  right: 5%;
+  width: 350px;
+  height: 350px;
   z-index: 100;
   pointer-events: none;
 }
 
-@media (max-width: 1024px) {
+/* Large Desktop */
+@media (min-width: 1440px) {
   #canvas-container {
-    width: 200px;
-    height: 200px;
-    right: 20px;
+    width: 400px;
+    height: 400px;
+    right: 8%;
+    top: 120px;
+  }
+}
+
+/* Desktop */
+@media (max-width: 1439px) and (min-width: 1025px) {
+  #canvas-container {
+    width: 320px;
+    height: 320px;
+    right: 5%;
+    top: 100px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) and (min-width: 769px) {
+  #canvas-container {
+    width: 220px;
+    height: 220px;
+    right: 3%;
+    top: 90px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  #canvas-container {
+    width: 140px;
+    height: 140px;
+    right: 5px;
     top: 70px;
   }
 }
 
-@media (max-width: 768px) {
+/* Small Mobile */
+@media (max-width: 480px) {
   #canvas-container {
-    width: 150px;
-    height: 150px;
-    right: 10px;
-    top: 60px;
+    width: 120px;
+    height: 120px;
+    right: 5px;
+    top: 65px;
   }
 }
 
@@ -136,7 +168,7 @@ ul {
   border-bottom: 1px solid rgba(96, 165, 250, 0.2);
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: 998;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
@@ -233,7 +265,7 @@ ul {
   border: 1px solid rgba(96, 165, 250, 0.2);
   transition: transform 0.3s, box-shadow 0.3s;
   position: relative;
-  z-index: 1;
+  z-index: 10;
 }
 
 .glass-section:hover {
@@ -490,4 +522,4 @@ footer {
   .glass-section {
     padding: 2rem 1.5rem;
   }
-}
+  }
