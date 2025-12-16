@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Style Preview - Mohamed Ishauq Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
   <style>
-/* === MODERN PORTFOLIO REDESIGN === */
+/* === MODERN WHITE PORTFOLIO WITH PURPLE ACCENTS === */
 
 /* Reset and Base */
 * {
@@ -16,17 +16,19 @@
 }
 
 :root {
-  --bg-primary: #0a0a0f;
-  --bg-secondary: #14141f;
-  --bg-card: #1a1a2e;
-  --accent-purple: #9d4edd;
-  --accent-blue: #3b82f6;
-  --accent-cyan: #06b6d4;
-  --text-primary: #f1f5f9;
-  --text-secondary: #94a3b8;
-  --border-color: rgba(148, 163, 184, 0.1);
-  --glow-purple: rgba(157, 78, 221, 0.3);
-  --glow-blue: rgba(59, 130, 246, 0.3);
+  --bg-primary: #fafafa;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --accent-purple: #8b5cf6;
+  --accent-purple-dark: #7c3aed;
+  --accent-purple-light: #a78bfa;
+  --accent-pink: #ec4899;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --border-color: #e2e8f0;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 40px rgba(139, 92, 246, 0.15);
 }
 
 html {
@@ -43,41 +45,17 @@ body {
   position: relative;
 }
 
-/* Animated gradient background */
+/* Subtle gradient background */
 body::before {
-  content: '';
-  position: fixed;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: 
-    radial-gradient(circle at 20% 50%, rgba(157, 78, 221, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 40% 20%, rgba(6, 182, 212, 0.05) 0%, transparent 50%);
-  animation: gradientMove 20s ease infinite;
-  pointer-events: none;
-  z-index: 0;
-}
-
-@keyframes gradientMove {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  33% { transform: translate(5%, 5%) rotate(120deg); }
-  66% { transform: translate(-5%, 5%) rotate(240deg); }
-}
-
-/* Grid pattern overlay */
-body::after {
   content: '';
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: 
-    linear-gradient(rgba(148, 163, 184, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
-  background-size: 30px 30px;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(139, 92, 246, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(236, 72, 153, 0.04) 0%, transparent 50%);
   pointer-events: none;
   z-index: 0;
 }
@@ -98,7 +76,7 @@ body::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--bg-primary);
+  background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -109,28 +87,27 @@ body::after {
 
 .preloader-title {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 2.5rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue), var(--accent-cyan));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #ffffff;
   margin-bottom: 0.5rem;
   animation: fadeInUp 0.6s ease;
+  letter-spacing: -0.02em;
 }
 
 .preloader-tagline {
-  color: var(--text-secondary);
-  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
   margin-bottom: 2rem;
   animation: fadeInUp 0.6s ease 0.2s backwards;
+  font-weight: 300;
 }
 
 .loader {
   width: 50px;
   height: 50px;
-  border: 3px solid rgba(157, 78, 221, 0.2);
-  border-top-color: var(--accent-purple);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -156,12 +133,13 @@ body::after {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(10, 10, 15, 0.8);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-color);
   z-index: 999;
   padding: 1rem 0;
   transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
 }
 
 .nav-container {
@@ -193,28 +171,22 @@ body::after {
   color: var(--text-secondary);
   text-decoration: none;
   padding: 0.6rem 1.2rem;
-  border-radius: 8px;
+  border-radius: 10px;
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   transition: all 0.3s ease;
   position: relative;
 }
 
-.nav-link:hover,
-.nav-link.active {
-  color: var(--text-primary);
-  background: rgba(157, 78, 221, 0.1);
+.nav-link:hover {
+  color: var(--accent-purple);
+  background: rgba(139, 92, 246, 0.08);
 }
 
-.nav-link.active::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 1.2rem;
-  right: 1.2rem;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue));
-  border-radius: 2px;
+.nav-link.active {
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
 }
 
 /* === 3D CANVAS === */
@@ -226,7 +198,7 @@ body::after {
   height: 300px;
   z-index: 10;
   pointer-events: none;
-  opacity: 0.7;
+  opacity: 0.6;
   animation: float 6s ease-in-out infinite;
 }
 
@@ -257,90 +229,106 @@ body::after {
 }
 
 .glass-section {
-  background: rgba(26, 26, 46, 0.4);
-  backdrop-filter: blur(20px);
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: 24px;
-  padding: 3rem;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  padding: 3.5rem;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-purple), var(--accent-pink));
 }
 
 /* === ABOUT SECTION === */
 .profile-container {
   display: grid;
-  grid-template-columns: 250px 1fr;
-  gap: 3rem;
+  grid-template-columns: 280px 1fr;
+  gap: 3.5rem;
   align-items: start;
 }
 
 #profile-photo {
   width: 100%;
   aspect-ratio: 1;
-  border-radius: 20px;
+  border-radius: 24px;
   object-fit: cover;
-  border: 3px solid rgba(157, 78, 221, 0.3);
+  border: 4px solid #f1f5f9;
   box-shadow: 
-    0 10px 30px rgba(157, 78, 221, 0.2),
-    0 0 0 1px rgba(255, 255, 255, 0.05);
+    0 10px 30px rgba(139, 92, 246, 0.2),
+    0 0 0 1px rgba(139, 92, 246, 0.1);
   transition: all 0.4s ease;
 }
 
 #profile-photo:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 
-    0 20px 50px rgba(157, 78, 221, 0.3),
-    0 0 0 1px rgba(255, 255, 255, 0.1);
+    0 20px 50px rgba(139, 92, 246, 0.25),
+    0 0 0 1px rgba(139, 92, 246, 0.2);
 }
 
 .profile-text h2 {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 2.8rem;
+  font-weight: 800;
   margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .profile-text p {
   color: var(--text-secondary);
-  font-size: 1rem;
+  font-size: 1.05rem;
   margin-bottom: 1.5rem;
   line-height: 1.8;
 }
 
 .inline-icon {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   vertical-align: middle;
-  margin-right: 8px;
-  filter: drop-shadow(0 2px 4px rgba(157, 78, 221, 0.3));
+  margin-right: 10px;
+  filter: brightness(0.8);
 }
 
-/* === SECTION HEADINGS === */
+/* === SECTION HEADINGS - REDESIGNED === */
 section > h2 {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: left;
   margin-bottom: 3rem;
-  background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
+  letter-spacing: -0.03em;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid #f1f5f9;
 }
 
 section > h2::after {
   content: '';
-  display: block;
-  width: 60px;
-  height: 4px;
-  background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue));
-  margin: 1rem auto 0;
-  border-radius: 2px;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 120px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-purple), var(--accent-pink));
+  border-radius: 3px;
 }
 
 /* === GRIDS === */
@@ -348,7 +336,7 @@ section > h2::after {
 .skills-grid,
 .certifications-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 2rem;
 }
 
@@ -356,13 +344,14 @@ section > h2::after {
 .project-card,
 .skill-card,
 .cert-card {
-  background: rgba(26, 26, 46, 0.6);
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
-  border-radius: 16px;
+  border-radius: 20px;
   padding: 2rem;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
+  box-shadow: var(--shadow-sm);
 }
 
 .project-card::before,
@@ -373,36 +362,32 @@ section > h2::after {
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue), var(--accent-cyan));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s ease;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-purple), var(--accent-pink));
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .project-card:hover::before,
 .skill-card:hover::before,
 .cert-card:hover::before {
-  transform: scaleX(1);
+  opacity: 1;
 }
 
 .project-card:hover,
 .skill-card:hover,
 .cert-card:hover {
   transform: translateY(-8px);
-  border-color: rgba(157, 78, 221, 0.3);
-  background: rgba(26, 26, 46, 0.8);
-  box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.4),
-    0 0 0 1px rgba(157, 78, 221, 0.2);
+  border-color: rgba(139, 92, 246, 0.3);
+  box-shadow: var(--shadow-lg);
 }
 
 .project-card img,
 .project-card video {
   width: 100%;
-  height: 180px;
+  height: 200px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 16px;
   margin-bottom: 1.5rem;
   border: 1px solid var(--border-color);
 }
@@ -410,18 +395,20 @@ section > h2::after {
 .project-card h3,
 .cert-card h4 {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 600;
+  font-size: 1.4rem;
+  font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 0.8rem;
+  letter-spacing: -0.01em;
 }
 
 .skill-card h4 {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.3rem;
+  font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
 }
 
 .project-card p,
@@ -429,30 +416,31 @@ section > h2::after {
 .cert-card p {
   color: var(--text-secondary);
   font-size: 0.95rem;
-  line-height: 1.6;
+  line-height: 1.7;
   margin-bottom: 1rem;
 }
 
 .project-card a,
 .cert-link {
-  display: inline-block;
-  color: var(--accent-purple);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ffffff;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.9rem;
-  padding: 0.6rem 1.2rem;
-  border: 1px solid var(--accent-purple);
-  border-radius: 8px;
+  padding: 0.7rem 1.4rem;
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
+  border-radius: 12px;
   transition: all 0.3s ease;
   margin-top: 0.5rem;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25);
 }
 
 .project-card a:hover,
 .cert-link:hover {
-  background: var(--accent-purple);
-  color: white;
-  transform: translateX(4px);
-  box-shadow: 0 4px 12px var(--glow-purple);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(139, 92, 246, 0.35);
 }
 
 .tech-list {
@@ -461,31 +449,37 @@ section > h2::after {
   border-top: 1px solid var(--border-color);
   font-size: 0.85rem;
   color: var(--text-secondary);
+  line-height: 1.6;
 }
 
 .skill-icon {
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
   margin-bottom: 1rem;
-  filter: drop-shadow(0 4px 8px rgba(157, 78, 221, 0.3));
+  padding: 12px;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.1));
+  border-radius: 16px;
 }
 
 .skill-level {
   display: inline-block;
-  padding: 0.3rem 0.8rem;
-  background: rgba(157, 78, 221, 0.1);
-  border: 1px solid rgba(157, 78, 221, 0.3);
-  border-radius: 6px;
-  font-size: 0.8rem;
-  color: var(--accent-purple);
-  font-weight: 500;
+  padding: 0.4rem 1rem;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.1));
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
   margin-bottom: 0.8rem;
 }
 
 .cert-issuer {
-  color: var(--accent-blue);
-  font-weight: 500;
-  font-size: 0.9rem;
+  color: var(--accent-purple);
+  font-weight: 600;
+  font-size: 0.95rem;
   margin-bottom: 0.3rem;
 }
 
@@ -497,36 +491,41 @@ section > h2::after {
 
 .cert-card img {
   width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 16px;
   margin-bottom: 1.5rem;
   border: 1px solid var(--border-color);
 }
 
 /* === CONTACT SECTION === */
+#contact {
+  text-align: center;
+}
+
 #contact p {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
+  font-size: 1.15rem;
+  margin-bottom: 1.2rem;
   color: var(--text-secondary);
 }
 
 #contact a {
   color: var(--accent-purple);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   transition: all 0.3s ease;
   position: relative;
+  padding-bottom: 2px;
 }
 
 #contact a::after {
   content: '';
   position: absolute;
-  bottom: -2px;
+  bottom: 0;
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--accent-purple);
+  background: linear-gradient(90deg, var(--accent-purple), var(--accent-pink));
   transition: width 0.3s ease;
 }
 
@@ -535,7 +534,10 @@ section > h2::after {
 }
 
 #contact a:hover {
-  color: var(--accent-blue);
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* === MOBILE RESPONSIVE === */
@@ -560,17 +562,17 @@ section > h2::after {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 70%;
-    max-width: 300px;
+    width: 75%;
+    max-width: 320px;
     height: 100vh;
-    background: rgba(20, 20, 31, 0.98);
+    background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(20px);
     flex-direction: column;
     padding: 5rem 2rem 2rem;
     gap: 0.5rem;
     border-left: 1px solid var(--border-color);
     transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
   }
 
   .nav-menu.active {
@@ -580,6 +582,7 @@ section > h2::after {
   .nav-link {
     padding: 1rem 1.2rem;
     border-radius: 12px;
+    text-align: left;
   }
 
   #canvas-container {
@@ -587,7 +590,7 @@ section > h2::after {
     height: 150px;
     top: 80px;
     right: 10px;
-    opacity: 0.5;
+    opacity: 0.4;
   }
 
   .section {
@@ -596,7 +599,7 @@ section > h2::after {
 
   .glass-section {
     padding: 2rem 1.5rem;
-    border-radius: 16px;
+    border-radius: 20px;
   }
 
   .profile-container {
@@ -606,17 +609,23 @@ section > h2::after {
   }
 
   #profile-photo {
-    max-width: 200px;
+    max-width: 220px;
     margin: 0 auto;
   }
 
   .profile-text h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   section > h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  section > h2::after {
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .projects-grid,
@@ -635,15 +644,15 @@ section > h2::after {
 
 @media (max-width: 480px) {
   .preloader-title {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .profile-text h2 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   section > h2 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   #canvas-container {
@@ -660,32 +669,32 @@ html {
 </head>
 <body>
   <div style="padding: 2rem; max-width: 1200px; margin: 0 auto;">
-    <h1 style="text-align: center; margin-bottom: 2rem; font-family: 'Space Grotesk', sans-serif; font-size: 2rem; background: linear-gradient(135deg, #9d4edd, #3b82f6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
-      Modern Portfolio Style Preview
+    <h1 style="text-align: center; margin-bottom: 2rem; font-family: 'Space Grotesk', sans-serif; font-size: 2.5rem; font-weight: 800; background: linear-gradient(135deg, #8b5cf6, #ec4899); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -0.02em;">
+      Modern White Portfolio - Purple Theme
     </h1>
     
-    <div style="background: rgba(26, 26, 46, 0.4); backdrop-filter: blur(20px); border: 1px solid rgba(148, 163, 184, 0.1); border-radius: 24px; padding: 3rem; margin-bottom: 2rem;">
-      <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 2rem; margin-bottom: 1rem; background: linear-gradient(135deg, #9d4edd, #3b82f6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
-        Style Features
+    <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 24px; padding: 3rem; margin-bottom: 2rem; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08); position: relative; overflow: hidden;">
+      <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #8b5cf6, #ec4899);"></div>
+      <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 2rem; margin-bottom: 1.5rem; background: linear-gradient(135deg, #8b5cf6, #ec4899); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; letter-spacing: -0.02em;">
+        ✨ Design Features
       </h2>
-      <ul style="color: #94a3b8; line-height: 2;">
-        <li>✨ Modern dark theme with purple/blue gradient accents</li>
-        <li>📱 Fully responsive - works perfectly on all devices</li>
-        <li>🎨 Clean, minimalist design inspired by modern portfolios</li>
-        <li>💫 Smooth animations and transitions</li>
-        <li>🌊 Animated gradient background effects</li>
-        <li>🎯 Glass-morphism cards with hover effects</li>
-        <li>📐 Grid layout that adapts to screen size</li>
-        <li>🔤 Modern typography with Inter and Space Grotesk fonts</li>
+      <ul style="color: #64748b; line-height: 2; font-size: 1.05rem;">
+        <li>🎨 <strong>Clean White Theme</strong> with purple & pink gradient accents</li>
+        <li>📱 <strong>Fully Mobile Responsive</strong> - works perfectly on all devices</li>
+        <li>💜 <strong>Purple Gradient Preloader</strong> - beautiful first impression</li>
+        <li>📐 <strong>New Heading Design</strong> - left-aligned with gradient underline</li>
+        <li>🎯 <strong>Gradient Buttons</strong> - purple to pink gradient on all CTAs</li>
+        <li>✨ <strong>Smooth Animations</strong> - professional hover effects</li>
+        <li>🃏 <strong>Modern Cards</strong> - clean white cards with subtle shadows</li>
+        <li>🔤 <strong>Premium Typography</strong> - Space Grotesk for headings</li>
       </ul>
     </div>
 
-    <div style="background: rgba(26, 26, 46, 0.4); backdrop-filter: blur(20px); border: 1px solid rgba(148, 163, 184, 0.1); border-radius: 24px; padding: 2rem; text-align: center;">
-      <p style="color: #94a3b8; margin-bottom: 1rem;">
-        Copy the CSS from this artifact and replace your entire style.css file.
-      </p>
-      <p style="color: #94a3b8;">
-        The design will automatically work with your existing HTML structure!
+    <div style="background: linear-gradient(135deg, #8b5cf6, #ec4899); border-radius: 24px; padding: 2.5rem; text-align: center; color: white;">
+      <h3 style="font-size: 1.5rem; margin-bottom: 1rem; font-weight: 700;">🚀 Ready to Use!</h3>
+      <p style="font-size: 1.1rem; opacity: 0.95;">
+        Copy this CSS and replace your entire style.css file.<br>
+        Your portfolio will transform into a modern, professional design!
       </p>
     </div>
   </div>
