@@ -1,7 +1,7 @@
 {
   "title": "VERX – Minimal Version Control System",
   "description": "A lightweight version control system built from scratch in C++ to understand repository management, filesystem tracking, and client-server push operations without relying on Git. Implements local repositories, ZIP-based push using miniz, and an embedded HTTP server for remote storage.",
-  "thumbnail": "VN20251213_182613.mp4",
+  "thumbnail": "project3-thumbnail.mp4",
   "github": "https://github.com/mdishauq/VERX",
   "technologies": ["C++", "Filesystem API", "miniz", "cpp-httplib", "libcurl", "HTTP"]
 }
