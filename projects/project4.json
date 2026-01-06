@@ -1,0 +1,18 @@
+{
+  "title": "AI Study Assistant – Hybrid C++ & Web Application",
+  "description": "An AI-powered study assistant built with a high-performance C++ backend and a modern web frontend. The core system handles topic management, note-taking, MCQ generation, progress tracking, and Google Gemini AI–based Q&A. A Node.js wrapper exposes the C++ engine to a browser-based UI, demonstrating a hybrid approach that combines systems programming with AI-assisted full-stack development.",
+  "video": "ai-study-assistant-thumbnail.mp4",
+  "github": "https://github.com/mdishauq/ai-study-assistant",
+  "technologies": [
+    "C++11",
+    "Google Gemini API",
+    "libcurl",
+    "nlohmann/json",
+    "Node.js",
+    "Express.js",
+    "HTML5",
+    "CSS3",
+    "JavaScript",
+    "Tailwind CSS"
+  ]
+}
