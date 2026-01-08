@@ -1,0 +1,7 @@
+{
+  "title": "Absolute-Bare-Metal-Series",
+  "description": "This project is about me summarizing all the things i have learned and put it together. Starting from the absolute basics and moving to advanced MCU topics and all the code is written using register level programming.",
+  "thumbnail": "project5-thumbnail.png",           
+  "github": "https://github.com/mdishauq/The-Absolute-STM32Bare-Metal-Series",
+  "technologies": ["C", "Keil U Vision IDE", "STM32","ST-link","Bare metal Programming"]
+}
