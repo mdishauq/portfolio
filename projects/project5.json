@@ -1,6 +1,6 @@
 {
   "title": "Absolute-Bare-Metal-Series",
-  "description": "This project is about me summarizing all the things i have learned and put it together. Starting from the absolute basics and moving to advanced MCU topics and all the code is written using register level programming.",
+  "description": "This project is a structured bare-metal learning series where I summarize and consolidate everything I learn about microcontrollers. It starts from the absolute fundamentals and gradually progresses to more advanced MCU concepts. All examples and drivers are written using pure register-level programming, without using HAL, CMSIS, or any high-level libraries, in order to achieve a deep understanding of how the hardware actually works.The goal of this project is not only to document my own learning journey, but also to build a solid foundation in embedded systems by implementing each peripheral from scratch and understanding the MCU at the lowest level.",
   "thumbnail": "project5-thumbnail.png",           
   "github": "https://github.com/mdishauq/The-Absolute-STM32Bare-Metal-Series",
   "technologies": ["C", "Keil U Vision IDE", "STM32","ST-link","Bare metal Programming"]
