@@ -1,11 +1,7 @@
 {
-  "certificate": {
-    "title": "Certificate of Appreciation",
-    "achievement": "3rd place",
-    "event": "Embedded Systems Using Raspberry Pi Hackathon by Naan Mudhalvan",
-    "organized_by": "TANSAM on 29-04-2025",
-    "project": "Automated attendence system using raspberry pi",
-    "certificate_image": "cert4-image.jpg",
-    "description": "Awarded for achieving 1st place in the Embedded Systems Using Raspberry Pi Hackathon conducted under the Naan Mudhalvan program organized by TANSAM. Recognized for excellent participation and outstanding work."
-  }
+  "title": "Embedded Systems Using Raspberry Pi Hackathon (3rd Place)",
+  "issuer": "TANSAM (Naan Mudhalvan)",
+  "date": "29-04-2025",
+  "description": "Awarded for achieving 3rd place in the Embedded Systems Using Raspberry Pi Hackathon organized by TANSAM. Developed an 'Automated Attendance System using Raspberry Pi,' demonstrating excellence in embedded hardware integration and real-time systems programming.",
+  "certificate_image": "cert4-image.jpg"
 }
