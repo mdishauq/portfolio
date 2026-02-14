@@ -1,0 +1,7 @@
+{
+  "title": "High Performance applications with C++",
+  "issuer": "UDEMY",
+  "date": "13-02-2026",
+  "description": "This certification validates advanced proficiency in low-level systems programming and concurrent architecture. It covers the implementation of thread-safe data structures, sophisticated synchronization primitives (Mutex, Semaphores, RWLocks), and the design of asynchronous task-execution systems. I demonstrated these skills by developing a custom thread pool that leverages modern C++ memory models and future/promise patterns for high-throughput processing.",
+  "certificate_image": "cert5-image.jpg"
+}
