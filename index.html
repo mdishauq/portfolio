@@ -15,6 +15,18 @@
 
   <!-- Three.js CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- View Counter Style -->
+  <style>
+    .view-counter {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 0.85rem;
+      font-family: 'Space Grotesk', sans-serif;
+      letter-spacing: 0.05em;
+      opacity: 0.7;
+    }
+  </style>
 </head>
 <body>
 
@@ -51,6 +63,8 @@
           <h3>👋 Hi, I'm Mohamed Ishauq</h3>
           <p>I am an Embedded Systems Engineer passionate about designing innovative and practical solutions that address real-world problems through technology. I enjoy working with microcontrollers, embedded C programming, electronics, and hardware interfacing to build systems that are not only functional but efficient and reliable.</p>
           <p>My journey in embedded systems has helped me develop strong problem-solving skills and a mindset focused on optimization, scalability, and real-time performance. I believe technology should make life smarter, faster, and more meaningful — and I'm driven to contribute to that future.</p>
+          <!-- View Counter -->
+          <p class="view-counter">👁 <span id="view-count">...</span> views</p>
         </div>
         <div class="about-image">
           <img id="profile-photo" src="./images/profile.png" alt="Profile photo of Mohamed Ishauq" />
@@ -117,5 +131,18 @@
       }, 1000);
     });
   </script>
+
+  <!-- VIEW COUNTER SCRIPT -->
+  <script>
+    fetch('https://counterapi.dev/api/mdishauq-portfolio/visits/up')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('view-count').innerText = data.count.toLocaleString();
+      })
+      .catch(() => {
+        document.getElementById('view-count').innerText = '--';
+      });
+  </script>
+
 </body>
 </html>
