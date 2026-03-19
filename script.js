@@ -540,7 +540,7 @@ async function loadCertifications() {
 // --- Profile photo dynamic reload ---
 const profileImg = document.getElementById('profile-photo');
 if (profileImg) {
-    profileImg.src = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${BRANCH}/images/profile.jpg`;
+    profileImg.src = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${BRANCH}/images/profile.png`;
 }
 
 // --- Mobile Menu Toggle ---
