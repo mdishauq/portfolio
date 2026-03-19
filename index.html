@@ -134,15 +134,14 @@
 
   <!-- VIEW COUNTER SCRIPT -->
   <script>
-    fetch('https://counterapi.dev/api/mdishauq-portfolio/visits/up')
-      .then(res => res.json())
-      .then(data => {
-        document.getElementById('view-count').innerText = data.count.toLocaleString();
-      })
-      .catch(() => {
-        document.getElementById('view-count').innerText = '--';
-      });
-  </script>
-
+  fetch('https://api.counterapi.dev/v1/mdishauq-portfolio/visits/up')
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById('view-count').innerText = data.count.toLocaleString();
+    })
+    .catch(() => {
+      document.getElementById('view-count').innerText = '--';
+    });
+</script>
 </body>
 </html>
