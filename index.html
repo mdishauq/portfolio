@@ -134,14 +134,25 @@
 
   <!-- VIEW COUNTER SCRIPT -->
   <script>
-  fetch('https://api.counterapi.dev/v1/mdishauq-portfolio/visits/up')
-    .then(res => res.json())
-    .then(data => {
-      document.getElementById('view-count').innerText = data.count.toLocaleString();
-    })
-    .catch(() => {
-      document.getElementById('view-count').innerText = '--';
-    });
+  const isOwner = localStorage.getItem('is-owner');
+
+  if (!isOwner) {
+    // Count this visit (not your device)
+    fetch('https://api.counterapi.dev/v1/mdishauq-portfolio/visits/up')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('view-count').innerText = data.count.toLocaleString();
+      })
+      .catch(() => document.getElementById('view-count').innerText = '--');
+  } else {
+    // Your device — just show count, don't increment
+    fetch('https://api.counterapi.dev/v1/mdishauq-portfolio/visits')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('view-count').innerText = data.count.toLocaleString();
+      })
+      .catch(() => document.getElementById('view-count').innerText = '--');
+  }
 </script>
 </body>
 </html>
