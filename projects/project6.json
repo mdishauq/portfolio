@@ -1,6 +1,6 @@
 {
   "title": "Industrial Doctor v2.0",
-  "description": "Predictive maintenance companion system with edge-deployed machine health monitoring. Continuous acoustic analysis and real-time status display using on-device intelligence without cloud dependency.",
+  "description": "This system represents a decentralized approach to industrial reliability, moving diagnostic intelligence directly to the source of data. By employing edge-deployed machine health monitoring, the companion system eliminates the latency and privacy concerns associated with cloud-based processing. It utilizes continuous acoustic analysis to detect high-frequency mechanical signatures that precede failure, such as bearing wear or shaft misalignment. Real-time status updates are provided through an on-device display, offering maintenance teams immediate visibility into motor health without requiring external connectivity. This autonomous operation ensures the system remains functional in remote or secure industrial environments where network access is restricted. Ultimately, by leveraging on-device intelligence, the system transforms raw vibration and sound data into actionable insights, enabling a transition from reactive repairs to proactive, data-driven maintenance.",
   "thumbnail": "project6-thumbnail.png",
   "github": "https://mdishauq.github.io/INDUSTRIAL-DOCTOR/",
   "technologies": ["ESP32", "C/C++", "Digital Signal Processing", "OLED Display", "Machine Learning", "Edge Computing"]
