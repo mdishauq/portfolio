@@ -27,7 +27,7 @@ The website is built using **HTML, CSS, and JavaScript**, and hosted with **GitH
 
 If you're interested in working together or just want to say hi:
 
-- 📧 Email: `your-email@example.com` *(replace with your real email if you want)*
+- 📧 Email: `mdishauq619@gmail.com`
 - 🧑 GitHub: [mdishauq](https://github.com/mdishauq)
 
 ---
