@@ -1,7 +1,7 @@
 {
   "title": "Industrial Doctor v2.0",
   "description": "Predictive maintenance companion system with edge-deployed machine health monitoring. Continuous acoustic analysis and real-time status display using on-device intelligence without cloud dependency.",
-  "thumbnail": "industrial-doctor-thumbnail.jpg",
+  "thumbnail": "project6-thumbnail.png",
   "github": "https://github.com/mdishauq/INDUSTRIAL-DOCTOR",
   "technologies": ["ESP32", "C/C++", "Digital Signal Processing", "OLED Display", "Machine Learning", "Edge Computing"]
 }
