@@ -1,0 +1,7 @@
+{
+  "title": "STM32 HAL Codes - Microcontroller Programming",
+  "description": "Collection of STM32F103C8T6 microcontroller projects using STM32 HAL library. Developed with STM32CubeMX for configuration and code generation, compiled in KEIL UVISION5 IDE, and programmed via ST-LINK debugger. Covers GPIO, timers, interrupts, UART, and peripheral control on ARM Cortex-M3 architecture.",
+  "thumbnail": "project8-thumbnail.png",
+  "github": "https://github.com/mdishauq/STM32-HAL-CODES",
+  "technologies": ["C", "STM32 HAL", "STM32CubeMX", "KEIL UVISION5", "ST-LINK", "STM32F103C8T6", "ARM Cortex-M3", "Embedded Systems"]
+}
