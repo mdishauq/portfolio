@@ -1,7 +1,7 @@
 {
   "title": "Battery-Management-System",
   "description": "This project is a structured battery management and protection learning series where I summarize and consolidate everything I learn about embedded battery monitoring and control systems. It starts from the absolute fundamentals and gradually progresses to more advanced STM32 concepts. All examples and drivers are written using pure register-level programming, without using HAL, CMSIS, or any high-level libraries, in order to achieve a deep understanding of how the hardware actually works. The goal of this project is not only to document my own learning journey, but also to build a solid foundation in embedded systems by implementing each peripheral from scratch and understanding the MCU at the lowest level.",
-  "thumbnail": "project9-thumbnail.png",
+  "thumbnail": "project9-thumbnail.mp4",
   "github": "https://github.com/mdishauq/Battery-Management-System",
   "technologies": ["C", "Keil U Vision IDE", "STM32", "ST-link", "Hal Programming"]
 }
