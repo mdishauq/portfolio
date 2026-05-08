@@ -2,6 +2,6 @@
   "title": "Probe IT - CPU Health Monitor",
   "description": "A Windows desktop monitoring application built with a native C++ engine and Flutter UI. Streams real-time CPU, RAM, and memory metrics through platform channels with concurrent threading. Includes animated splash screen, live telemetry dashboard, and single-file installer. Open-source MIT licensed with Linux and Android versions in development.",
   "thumbnail": "project7-thumbnail.png",
-  "github": "https://github.com/mdishauq/PROBE-IT",
+  "github": "https://mdishauq.github.io/PROBE-IT/",
   "technologies": ["Flutter", "Dart", "C++", "Windows APIs", "CMake", "Inno Setup", "Platform Channels", "Multithreading", "Event Streaming"]
 }
