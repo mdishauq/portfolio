@@ -1,0 +1,7 @@
+{
+  "title": "Pancea-Antivirus-Software",
+  "description": "A custom security software utility implemented in C designed for file scanning, threat signature inspection, and lightweight malware identification without heavy software abstractions, built to understand system-level threat detection.",
+  "thumbnail": "project2-thumbnail.jpg",
+  "github": "https://github.com/mdishauq/Pancea-AntiVirus-Software-using-C-",
+  "technologies": ["C", "File I/O", "String Pattern Matching", "Threat Scanning", "Windows/Linux"]
+}
