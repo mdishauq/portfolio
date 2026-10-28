@@ -1,0 +1,18 @@
+{
+  "title": "Edge AI Heart Monitoring System",
+  "description": "This project is an embedded edge-AI heart monitoring system that uses red and infrared optical sensor data to classify the user's current state as ACTIVE, BACKGROUND, or RESTING. The machine-learning model was developed and exported using Edge Impulse, then deployed as a quantized TensorFlow Lite model for on-device inference on Arduino-compatible microcontrollers. The system performs signal processing and classification locally using FFT-based spectral analysis, allowing it to operate without continuously sending sensor data to the cloud. The project demonstrates the integration of optical sensors, embedded systems, digital signal processing, and TinyML for real-time health-related monitoring research and prototyping.",
+  "thumbnail": "project10-thumbnail.png",
+  "github": "https://github.com/mdishauq/Edge-AI-Heart-Monitoring-System",
+  "technologies": [
+    "C++",
+    "Arduino",
+    "ESP32",
+    "Edge Impulse",
+    "TensorFlow Lite",
+    "TinyML",
+    "Digital Signal Processing",
+    "FFT",
+    "Red and Infrared Optical Sensors",
+    "Embedded Systems"
+  ]
+}
